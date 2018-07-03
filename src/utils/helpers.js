@@ -16,4 +16,4 @@ export function timeoutThrottlerHandler(timeouts, name, delay, handler) {
       handler(); 
     }, delay);
   }
-}    
+}
