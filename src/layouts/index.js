@@ -79,7 +79,6 @@ class Layout extends React.Component {
 
   render() {
     const { children, data } = this.props;
-
     // TODO: dynamic management of tabindexes for keybord navigation
     return (
       <LayoutWrapper>

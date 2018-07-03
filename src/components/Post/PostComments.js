@@ -16,16 +16,15 @@ const styles = theme => ({
 
 const PostComments = props => {
   const { classes, slug, facebook } = props;
-
   return (
-    <div id="post-comments" className={classes.postComments}>
-      <FacebookProvider appId={facebook}>
+    <div id="post-comments" className={classes.postComments} >
+      {/* <FacebookProvider appId={facebook}>
         <Comments
           href={`${config.siteUrl}${slug}`}
           width="100%"
           colorScheme={props.theme.main.colors.fbCommentsColorscheme}
         />
-      </FacebookProvider>
+      </FacebookProvider> */}
     </div>
   );
 };

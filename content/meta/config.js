@@ -13,7 +13,7 @@ module.exports = {
   authorTwitterAccount: "",
   // info
   infoTitle: "Boat Ng",
-  infoTitleNote: "迷途小书童",
+  infoTitleNote: "一艘破船是也",
   // manifest.json
   manifestName: "",
   manifestShortName: "", // max 12 characters
