@@ -2,7 +2,7 @@
 title: 又好又快部署https证书的若干建议
 subTitle: https证书部署莞式服务
 category: "Operation"
-cover: cover.jpg 
+cover: cover.jpg
 ---
 
 ### 本文主要内容包括以下方面
