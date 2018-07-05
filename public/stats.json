@@ -1,12 +1,16 @@
 {
   "assetsByChunkName": {
+    "path---about-https-certificate": [
+      "path---about-https-certificate-0905f5d5cc81052021d0.js",
+      "path---about-https-certificate-0905f5d5cc81052021d0.js.map"
+    ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-aa9570313651ef926b5a.js",
       "component---src-pages-index-js-aa9570313651ef926b5a.js.map"
     ],
     "path---": [
-      "path----94b14be0d9dc38aac1dd.js",
-      "path----94b14be0d9dc38aac1dd.js.map"
+      "path----914fc12e644f31ad489a.js",
+      "path----914fc12e644f31ad489a.js.map"
     ],
     "component---src-pages-contact-js": [
       "component---src-pages-contact-js-9364c3e5a58450d0f8d7.js",
@@ -17,8 +21,8 @@
       "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-ea03ebae6ef8c05bc387.js",
-      "component---src-layouts-index-js-ea03ebae6ef8c05bc387.js.map"
+      "component---src-layouts-index-js-9f510215f2f17d3c9396.js",
+      "component---src-layouts-index-js-9f510215f2f17d3c9396.js.map"
     ],
     "path---index": [
       "path---index-206ac74de0d3aab26f03.js",
@@ -27,10 +31,6 @@
     "component---src-pages-search-js": [
       "component---src-pages-search-js-07dd8eecf4e7758f2479.js",
       "component---src-pages-search-js-07dd8eecf4e7758f2479.js.map"
-    ],
-    "path---about-this-blog": [
-      "path---about-this-blog-c0cffef20b35dfee5a85.js",
-      "path---about-this-blog-c0cffef20b35dfee5a85.js.map"
     ],
     "commons": [
       "commons-119043e49605190307e2.js",
@@ -59,9 +59,9 @@
       "path---starters-215d7d27fb8e2f474ea3.js.map"
     ],
     "app": [
-      "app-c3a7a91aac14da3e599f.js",
+      "app-439a6aaae8609a94f3de.js",
       "build-js-styles.css",
-      "app-c3a7a91aac14da3e599f.js.map",
+      "app-439a6aaae8609a94f3de.js.map",
       "build-js-styles.css.map"
     ],
     "component---src-templates-page-template-js": [
