@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[一艘小破船]]></title><description><![CDATA[一艘小破船]]></description><link>http://github.com/dylang/node-rss</link><generator>RSS for Node</generator><lastBuildDate>Thu, 05 Jul 2018 16:13:34 GMT</lastBuildDate><item><title><![CDATA[又好又快部署https证书的若干建议]]></title><description><![CDATA[本文主要内容包括以下方面 https的好处 https证书常识 https证书获取 https证书部署 其他https证书部署方法 前置知识及注意事项 如果您对以下内容有疑惑，请先通过百度或Google解决相关问题，否则阅读本文会有不同程度的困难 本文所有的操作在Linux…]]></description><link>/about-https-certificate/</link><guid isPermaLink="false">/about-https-certificate/</guid><content:encoded>&lt;h3&gt;本文主要内容包括以下方面&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[一艘小破船]]></title><description><![CDATA[一艘小破船]]></description><link>http://github.com/dylang/node-rss</link><generator>RSS for Node</generator><lastBuildDate>Thu, 12 Jul 2018 13:43:04 GMT</lastBuildDate><item><title><![CDATA[又好又快部署https证书的若干建议]]></title><description><![CDATA[本文主要内容包括以下方面 https的好处 https证书常识 https证书获取 其他https证书获取方式 https证书部署 前置知识及注意事项 如果你对以下内容有疑惑，请先通过百度或Google解决相关问题，否则阅读本文会有不同程度的困难 本文所有的操作在Linux…]]></description><link>/about-https-certificate/</link><guid isPermaLink="false">/about-https-certificate/</guid><content:encoded>&lt;h3&gt;本文主要内容包括以下方面&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;https的好处&lt;/li&gt;
 &lt;li&gt;https证书常识&lt;/li&gt;
 &lt;li&gt;https证书获取&lt;/li&gt;
+&lt;li&gt;其他https证书获取方式&lt;/li&gt;
 &lt;li&gt;https证书部署&lt;/li&gt;
-&lt;li&gt;其他https证书部署方法&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;前置知识及注意事项&lt;/h3&gt;
-&lt;h5&gt;&lt;em&gt;如果您对以下内容有疑惑，请先通过百度或Google解决相关问题，否则阅读本文会有不同程度的困难&lt;/em&gt;&lt;/h5&gt;
+&lt;h5&gt;&lt;em&gt;如果你对以下内容有疑惑，请先通过百度或Google解决相关问题，否则阅读本文会有不同程度的困难&lt;/em&gt;&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;本文所有的操作在Linux系统下进行，默认该系统已安装nginx，且nginx成功运行&lt;/li&gt;
-&lt;li&gt;您已拥有至少一个域名&lt;/li&gt;
+&lt;li&gt;你已拥有至少一个域名&lt;/li&gt;
 &lt;li&gt;Linux基础知识&lt;/li&gt;
 &lt;li&gt;vi/vim 编辑器基础命令&lt;/li&gt;
 &lt;li&gt;nginx配置基础知识&lt;/li&gt;
@@ -23,7 +23,21 @@
 次要的好处是，防止网页被挟持。2015年底曾发生过小米科技与腾讯、微博、今日头条等六家互联网公司联合呼吁运营商打击流量劫持 &lt;a href=&quot;https://www.zhihu.com/question/38861118&quot;&gt;:)我是一条link&lt;/a&gt;。
 当然还有其他好处，但本文就不一一细说&lt;/p&gt;
 &lt;h4&gt;https证书常识&lt;/h4&gt;
-&lt;p&gt;https证书是由某一权威中心颁发，针对域名认证的。&lt;/p&gt;
+&lt;p&gt;https证书通常由受信任的数字证书颁发机构CA验证服务器身份后颁发。常见的免费CA有Let’s Encrypt, TRUSTAsia。
+SSL证书级别分为三种类型，域名型SSL证书(DV SSL)、企业型SSL证书(OV SSL)、增强型SSL证书(EV SSL)。&lt;/p&gt;
+&lt;p&gt;以上三种类型的SSL证书获取时的验证方式依次复杂，安全性依次争强。免费的https证书基本都是域名型SSL证书。&lt;/p&gt;
+&lt;p&gt;获取https证书的过程，本质就是向CA证明你拥有某个域名的过程&lt;/p&gt;
+&lt;h4&gt;https证书获取&lt;/h4&gt;
+&lt;p&gt;Https证书的获取有多种方式,下面为大家介绍一个网站 &lt;a href=&quot;https://freessl.org/&quot;&gt;freessl&lt;/a&gt;。这个网站获取httpS证书非常方便，总的来说有三步：&lt;/p&gt;
+&lt;p&gt;首先需要在这个网站上注册，输入你要验证的域名，选择证书品牌，验证类型等；最简单的设置如下：&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;
+      &lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&quot;证书品牌&quot;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;TrustAsia&quot;&lt;/span&gt;
+&quot;证书类型&quot;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;ECC&quot;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# 不同的验证类型需要不同的配置，DNS是最简单的验证类型，仅需添加一条DNS解析即可&lt;/span&gt;
+&quot;验证类型&quot;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;DNS&quot;&lt;/span&gt; 
+&lt;span class=&quot;token comment&quot;&gt;# 选择浏览器生成，证书生成后可直接下载到本地&lt;/span&gt;
+&quot;CSR生成&quot;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;浏览器生成&quot;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;未完待续…&lt;/p&gt;
 &lt;/blockquote&gt;</content:encoded></item></channel></rss>
